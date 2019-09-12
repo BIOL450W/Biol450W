@@ -1,0 +1,90 @@
+obs,Plant_ID,plant_sp,Insect,visit.time,flower_abundance
+Helen,2,Thistle,Bumble Bee,2.09,4
+Helen,2,Thistle,Bumble Bee,0.22,4
+Miranda,2,Goldenrod,Honey Bee,9,23
+Miranda,2,Goldenrod,Bumble Bee,40,23
+Miranda,2,Goldenrod,Honey Bee,30,23
+Miranda,2,Goldenrod,Honey Bee,6,23
+Miranda,2,Goldenrod,Honey Bee,12,23
+Miranda,2,Goldenrod,Bumble Bee,41,23
+Miranda,2,Goldenrod,Honey Bee,48,23
+Miranda,2,Goldenrod,Bumble Bee,2,23
+Miranda,2,Goldenrod,Honey Bee,11,23
+Miranda,2,Goldenrod,Honey Bee,5,23
+Miranda,2,Goldenrod,Honey Bee,22,23
+Miranda,2,Goldenrod,Honey Bee,216,23
+Miranda,2,Goldenrod,Honey Bee,109,23
+Miranda,2,Goldenrod,Bumble Bee,55,23
+Stas,5,Thistle,Honey Bee,863,33
+Stas,5,Thistle,Honey Bee,60,33
+Stas,5,Thistle,Bumble Bee,260,33
+Saba,6,Goldenrod,Bumble Bee,3,25
+Saba,6,Goldenrod,Bumble Bee,100,25
+Ben,3,Thistle,Bumble Bee,232,8
+Ben,3,Thistle,Bumble Bee,182,8
+Ben,3,Thistle,Bumble Bee,42,8
+Ben,3,Thistle,Bumble Bee,404,8
+Devon,5,Goldenrod,Honey Bee,89,18
+Devon,5,Goldenrod,Honey Bee,48,18
+Devon,5,Goldenrod,Bumble Bee,29,18
+Devon,5,Goldenrod,Honey Bee,155,18
+Devon,5,Goldenrod,Honey Bee,65,18
+JT,4,Goldenrod,Honey Bee,78,10
+JT,4,Goldenrod,Honey Bee,82,10
+JT,4,Goldenrod,Honey Bee,13,10
+JT,4,Goldenrod,Honey Bee,2,10
+JT,4,Goldenrod,Honey Bee,43,10
+JT,4,Goldenrod,Honey Bee,70,10
+JT,4,Goldenrod,Honey Bee,40,10
+JT,4,Goldenrod,Honey Bee,89,10
+John Paul,4,Thistle,Bumble Bee,1200,113
+John Paul,4,Thistle,Bumble Bee,217,113
+John Paul,4,Thistle,Bumble Bee,196,113
+John Paul,4,Thistle,Honey Bee,22,113
+John Paul,4,Thistle,Honey Bee,72,113
+John Paul,4,Thistle,Bumble Bee,215,113
+John Paul,4,Thistle,Honey Bee,79,113
+John Paul,4,Thistle,Bumble Bee,64,113
+John Paul,4,Thistle,Honey Bee,4,113
+John Paul,4,Thistle,Honey Bee,267,113
+John Paul,4,Thistle,Bumble Bee,334,113
+John Paul,4,Thistle,Bumble Bee,133,113
+John Paul,4,Thistle,Bumble Bee,397,113
+John Paul,4,Thistle,Bumble Bee,95,113
+Mackenzie,3,Goldenrod,Bumble Bee,40,15
+Mackenzie,3,Goldenrod,Honey Bee,33,15
+Mackenzie,3,Goldenrod,Honey Bee,13,15
+Mackenzie,3,Goldenrod,Honey Bee,18,15
+Mackenzie,3,Goldenrod,Bumble Bee,127,15
+Mackenzie,3,Goldenrod,Honey Bee,9,15
+Mackenzie,3,Goldenrod,Honey Bee,8,15
+Mackenzie,3,Goldenrod,Honey Bee,24,15
+Mackenzie,3,Goldenrod,Bumble Bee,74,15
+Mackenzie,3,Goldenrod,Honey Bee,5,15
+Marisa,1,Goldenrod,Bumble Bee,92,7
+Marisa,1,Goldenrod,Bumble Bee,90,7
+Marisa,1,Goldenrod,Bumble Bee,22,7
+Marisa,1,Goldenrod,Bumble Bee,22,7
+Marisa,1,Goldenrod,Honey Bee,19,7
+Marisa,1,Goldenrod,Honey Bee,24,7
+Marisa,1,Goldenrod,Bumble Bee,2,7
+Marisa,1,Goldenrod,Bumble Bee,10,7
+Marisa,1,Goldenrod,Bumble Bee,33,7
+Dave,1A,Thistle,Bumble Bee,28,8
+Dave,1A,Thistle,Bumble Bee,17,8
+Dave,1B,Thistle,Bumble Bee,76,16
+Dave,1B,Thistle,Bumble Bee,12,16
+Dave,1B,Thistle,Honey Bee,30,16
+Dave,1B,Thistle,Bumble Bee,221,16
+Dave,1B,Thistle,Bumble Bee,6,16
+Dave,1B,Thistle,Honey Bee,79,16
+Dave,1B,Thistle,Bumble Bee,59,16
+Dave,1B,Thistle,Bumble Bee,318,16
+Dave,1B,Thistle,Bumble Bee,38,16
+Dave,1B,Thistle,Honey Bee,171,16
+Dave,1C,Thistle,Honey Bee,41,21
+Dave,1C,Thistle,Bumble Bee,46,21
+Dave,1C,Thistle,Honey Bee,58,21
+Dave,1C,Thistle,Bumble Bee,57,21
+Dave,1C,Thistle,Honey Bee,22,21
+Dave,1C,Thistle,Bumble Bee,7,21
