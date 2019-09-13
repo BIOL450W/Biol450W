@@ -1,0 +1,122 @@
+---
+title: "Lab 1 - the binomial approach"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Science is the human endeavor to achieve reproducible knowledge that is subject to revision and improvement. With humanity approaching 8 billion...  how is it then that we decide whether something in our world is true or not? What is valid given there are  many different opinions about anything? The scientific method is our ultimate and yet imperfect knowledge-producing tool. In science we do not force others to accept a version of reality by the mere weight of authority but we take a rather audacious and “risky” route: 
+
+
+**1.	We make a proposition** – we called that the **hypothesis** about what is the cause of a “something” we are interested in. The “something” is a pattern (regularity), phenomenon, or fundamental property on nature (nature includes pretty much everything in the universe!). Ideally a hypothesis is mechanistic and describes a “cause and effect relationship” that produces the pattern we observed.  
+
+**2.	How could such a proposition be evaluated or tested?** Good hypotheses are those that advance our knowledge if supported by evidence (notice I am using the word “supported” and not “proven”). Hypotheses are best evaluated by risky “setups”. A setup is a study or an experiment conceived to evaluate whether a pattern is random or not, and/or if it is associated or caused a proposed (hypothetical) mechanism. It will have the proper conditions to observe the proposed mechanism in action without the confounding effect of other potential causes.
+
+**3.	Make predictions** – How would new fresh data look when your hypothesis is supported? When it isn’t supported? Once the study or experiment has been carefully thought and planed, it will give a fair chance for your hypothesis to be rejected by the evidence (data) – that is what philosopher of science Karl Popper was talking about when saying that useful hypothesis are “risky”. Read more about Karl Popper here (https://plato.stanford.edu/entries/popper/). Very specific outcomes of the study will agree with your hypothesis, while other findings won’t. If a hypothesis is not supported, you have to go back and change it to a more plausible one  and/or re-think your study or experimental approach.
+
+**4.	Conduct a statistical test** to decide whether your predictions can be provisionally accepted or not. Back in the day of the good old scientific revolution, there were no formal tests to be used to accept or reject any hypotheses and ideas. Experience of reputable individuals mattered the most. Scientists repeated experiments over and over  until they were “sure” there were any causal relationships. Although this principle has not changed, statistical tools make science much more efficient, and open new inferential possibilities. Thus, the current way to conduct science rests on hypothesis falsification that dependes almost entirely on statistical testing. This is why you must acquire statistical tools in order to do science. Statistical inference allows you to design valid tests (for the time being) for your hypotheses and to communicate your findings more easily to the international community.
+
+Today in class we will start the journey of building a statistical toolbox with the most basic of all statistical tests: the binomial test. The binomial test is an exact test for a proportion. A proportion is the frequency of one type of event over an alternative event outcome.  We also refer to this simplest of the simplest of tests as a **one sample test** because there is only one vector of data. For example, we may count the frequency of ground hogs with mange in Happy Valley (based on the looks of their fur), or the number of adults vs. young American Robins in campus (base on their plumage), or the number of dead Hemlocks in Roth Rock forest due to a scale disease that sometimes infect them. In each of this cases the data looks the same, there are to types of outcomes: a groundhog is either infected or not, a robin is either adult or immature, and a hemlock is either dead or alive.
+
+A single (one-sample) vector describes the binomial data in all cases:
+
+Ground hogs (S = sick, H = healthy): 
+ S, H, H, H, H, H, H, S, H, H, H, H, H, H, …, n
+
+
+Hemlocks (D = dead tree, L = live tree):
+D, D, L, D, D, D, L, L, L, D, L, D, L, D, D, D, D, D, …, n
+
+In this examples, the proportion is written as the sum of one type of outcome (x) over the total sample ( n = number of events). Because statistics has its roots in probability theory develop in part for gambling games, x is commonly call the “number of successes” in most statistical books and scripts. 
+
+The main parameters we will need as input if we were to conduct a binomial test are then:
+
+x = the number of events of interest in each case
+
+n = the total number of events or sample size
+
+p = the hypothesized (expected) proportion. 
+
+This p is a number between 0 and 1 and it reflects our hypothesized or expected value. This number will reflect what is known about the system you are looking at. For instance, in the groundhog case, it may be that a prior study in the entire state of PA conducted ten years ago showed that mange occurred at a rate of 0.05. In the case of the hemlocks it may be from a forestry report stating that the rate of dead hemlocks in the forest is 0.90 in a local state park.
+
+
+# Today's Report #
+In all three cases we are then interested in testing our new data against an expected value. Let’s imagine that x and n for each of the three examples are the following:
+
+Infected Groundhogs: x = 3, n = 29, p = 0.15
+
+Dead Hemlocks:  x = 165, n = 210, p = 0.90
+
+
+**Exercise 1A.** Write a hypothesis for each case:
+
+For Groundhogs: alskdfjlaksjflkasjflajsdlkfjalskdjfl;asdjfl;kafj
+
+
+For Hemlocks: aldfaljflasjdflkasdjflkdf
+
+
+**Exercise 1B.** Conduct a binomial test for each case using the R script below. More information on how to use the function here: 
+https://www.rdocumentation.org/packages/stats/versions/3.6.1/topics/binom.test
+
+** Groundhogs **
+```{r }
+
+binom.test(3, 29, p = 0.15, alternative = c("two.sided"),conf.level = 0.95)
+```
+
+** Hemlocks **
+```{r}
+
+binom.test(165, 210, p = 0.9, alternative = c("two.sided"),conf.level = 0.95)
+```
+
+**Exercise 1C.** Were your hypothesis supported or not by the tests? Explain in each case:
+
+
+
+# Now let’s pair up. #
+
+Find a partner and discuss a hypothesis you can test using the binomial test, right now, out there in campus.
+
+
+**Exercise 2A.** Define the problem of interest and write a question that demands an answer:
+
+
+
+**Exercise 2B.** state the working hypothesis:
+
+
+
+**Exercise 2C.** Define the data to be collected and the method of collecting the data:
+
+
+
+**Exercise 2D.** Enter your data here and make a figure
+
+```{r}
+
+data <- c("outcome1"= 20, "outcome2"= 50 )
+
+barplot(data, main = "Figure 1", xlab = "events", col = c("red", "blue"))#
+
+
+```
+
+**Exercise 2E.** report x, p, and n
+
+akfjhklasdh vclk
+
+**Exercise 2F.** Conduct the binomial test here:
+
+```{r}
+# binom.test(x, n, p = h, alternative = c("two.sided"),conf.level = 0.95)
+```
+
+**Exercise 2G.** Was your hypothesis supported by the data? Explain why yes or why not.
+
+ADLFALSDFC;Lhf;lHlvhdL;D
