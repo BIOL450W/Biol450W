@@ -1,0 +1,184 @@
+---
+title: "Pollination_analysis"
+author: "T. Carlo"
+date: "9/12/2019"
+output:
+  word_document: default
+  html_document: default
+---
+
+Get your data here:
+
+```{r setup, include=FALSE}
+library(RCurl)
+
+polli <-read.csv(text=getURL("https://raw.githubusercontent.com/BIOL450W/Biol450W/master/pollination.csv"), header=T)
+head(polli)
+
+head(polli)
+```
+
+I. Now let's check the distribution of your response variable (visit.time) - some of the tests we want to do assume your data is normally distributed (i.e., follow a Gaussian distribution). We will start by making a histogram of the data:
+
+```{r cars}
+hist(polli$visit.time, main = "Histogram of visit time for bees", col = "lightblue", xlab = "Time spent on plant (seconds")
+```
+
+As you can see, the data does not look like the "bell shape" of a normal distribution. Anyways, we will be formal and check with a Shapiro-Wilk test for normality:
+
+```{r}
+shapiro.test(polli$visit.time)
+```
+
+The Shapiro-Wilk tests the null hypothesis that your data "is" from a normal distribution, therefore, small p-values reject the null.
+
+#Question 1:  interpret the p-value of the normality test you just did here:#
+
+
+
+Now, we will use a #data transformation# to try meet the normality criterion of the tests we want to do. A common transformation is by taking the logarithm of the data, this helps reduce the magnitude of the difference between different measures and reduces the weight of extreme values in your data set:
+```{r}
+polli$log_visit.time <- log(polli$visit.time)
+
+head(polli)
+
+hist(polli$log_visit.time, main = "Histogram of visit time for bees", col = "lightblue", xlab = "Time spent on plant (seconds")
+
+shapiro.test(polli$log_visit.time)
+```
+
+
+Now that we have met the normaily criterion, we are clear to conduct statistical tests. 
+
+The first test is for frequency of visits by plant species - what we call a "Contingency Table". It is an extension of the binomial tests for two or more groups, each group eith two or more categories.
+
+```{r}
+# Stacked Bar Plot with Colors and Legend 
+
+counts <- table(polli$Insect,polli$plant_sp)
+
+barplot(counts, main="plant visit by Bee sp.",
+        xlab="plant visits", col=c("purple","yellow"),
+        legend = rownames(counts))
+
+chisq.test(counts)
+
+```
+
+#Question 2:  Based on the resutls of the Chi Square test, can you say that that honey bees visit golden rods and thistles as frequently as bumble bees? Why yes or why not?#
+
+
+
+Now what about the time spent per visit? For this we will do a t-test, which is the basic test that compares whether or not two averages are the same or not (i.e., come from the same distrubtion or from different ones).
+
+```{r}
+boxplot(visit.time~Insect, data=polli, notch=TRUE, 
+        col=(c("blue")),
+        main="visit time", xlab="Bee sp.", cex.axis = 0.6,  ylim = c(0, 500))
+model_visit <- lm(visit.time ~ Insect, data = polli)
+summary(model_visit)
+
+```
+
+#Question 3:  Is there a difference between bee species in the amount ot time spend in those plants?
+
+
+
+
+But what about for preferences within each species of BEE???
+
+Let's plot the data as averages per plant:
+```{r}
+boxplot(visit.time~plant_sp*Insect, data=polli, notch=TRUE, 
+        col=(c("gold","purple")),
+        main="visit time", xlab="Bee sp. per plant", cex.axis = 0.6,  ylim = c(0, 500))
+```
+
+
+Now are ready to comapre each pair of means, lets start with Honeybees:
+
+```{r}
+Honey_Bee <- polli[ which(polli$Insect=='Honey Bee'),]
+model_honey <- lm(visit.time ~ plant_sp, data = Honey_Bee)
+summary(model_honey)
+
+```
+
+#Question: Was there a preference for honey bees? What was the magnitude of the difference? The magnitude of the difference is "how much" visit time differs between plants (in average). Look at the table and pay attention to the Estimates for the "Intercept" and the "plant_sp",#
+
+Now lets move to the Bumble bees:
+
+```{r}
+Bumble_Bee <- polli[ which(polli$Insect=='Bumble Bee'),]
+model_bumble <- lm(visit.time ~ plant_sp, data = Bumble_Bee)
+summary(model_bumble)
+
+```
+
+#Question: Was there a preference for Bumble bees? What was the magnitude of the difference?#
+
+
+Now let's examine the effect of the amount of flower resouces on visit time for both species combined using a linear model:
+```{r}
+plot(log(polli$visit.time), log(polli$flower_abundance), main="Influence of flower resource density", 
+   xlab="Number of flowers per plant ", ylab="visit time (sec) ", pch=19)
+
+abline(lm(log(polli$visit.time) ~log(polli$flower_abundance)), col = "orange", lwd=3)
+
+model_reg <- lm(log(visit.time) ~log(flower_abundance), data = polli)
+
+summary(model_reg)
+
+```
+
+
+#Question 4: for every additional flower a plant has, how much more time does a bee spends on the plant?#
+
+
+#Question 5: is this a strong relationship? (hint: look at the R-squared value for interpretation)#
+
+Lets check for each species separately, first honeybees:
+```{r}
+Honey_Bee <- polli[ which(polli$Insect=='Honey Bee'),]
+
+plot(log(Honey_Bee$visit.time), log(Honey_Bee$flower_abundance), main="Influence of flower resource density", 
+   xlab="Number of flowers per plant ", ylab="Honey Bee (sec) ", pch=19)
+
+abline(lm(log(Honey_Bee$visit.time) ~log(Honey_Bee$flower_abundance)), col = "orange", lwd=3)
+
+reg_model_honey <- lm(log(visit.time) ~ log(flower_abundance), data = Honey_Bee)
+
+summary(reg_model_honey)
+```
+
+#Question 6: is there an effect of resource abundance for honeybees? Explain.#
+
+
+Then for bumblebees:
+
+```{r}
+Bumble_Bee <- polli[ which(polli$Insect=='Bumble Bee'),]
+
+plot(log(Bumble_Bee$visit.time), log(Bumble_Bee$flower_abundance), main="Influence of flower resource density", 
+   xlab="Number of flowers per plant ", ylab="Bumble bee (sec) ", pch=19)
+
+abline(lm(log(Bumble_Bee$visit.time) ~log(Bumble_Bee$flower_abundance)), col = "orange", lwd=3)
+
+reg_model_bumble <- lm(log(visit.time) ~ log(flower_abundance), data = Bumble_Bee)
+
+summary(reg_model_bumble)
+
+```
+
+
+#Question 7: is there an effect of resource abundance for bumblebees? Explain.#
+
+
+
+
+
+
+
+
+
+
