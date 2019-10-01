@@ -1,0 +1,138 @@
+# Tomasssss #
+
+
+title: "Thistle_Seeds_&_Roads"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+1) First setup your working directory under the "Session" Menu. Select the file were you have your data file.
+
+Then we will import our data set as a csv text file using these commands:
+
+
+```{r}
+thistle <- read.csv("thistle.csv", header=TRUE)
+attach(thistle)
+names(thistle)
+```
+
+
+
+2) Before doing anything, we will check the distribution of the two response variables (distance, angle) we want to analyze, and test for their normality.
+
+distance:
+```{r}
+
+hist(thistle$distance_m, main = "Dispersal distance", col = "lightblue", xlab = "frequency")
+shapiro.test(thistle$distance_m)
+```
+
+angle:
+```{r}
+
+hist(thistle$angle, main = "angle", col = "lightblue", xlab = "frequency")
+```
+
+
+##Question set 1: Do we need any data transformations?##
+
+If so, do them here by creating an "r chunk". Include a new histogram and a normality test for each case - was data normally distibuted after transformation?
+
+#your answer here#
+
+
+Adapt the following command lines to transform any response variable:
+
+```{r}
+
+thistle$log_distance_m <- log(thistle$distance_m + 1)
+
+head(thistle)
+
+hist(thistle$log_distance_m, main = "Histogram of distance", col = "lightblue", xlab = "frequency")
+
+shapiro.test(thistle$log_distance_m)
+
+```
+
+
+
+
+
+
+3) Now we can make some plots:
+
+distance:
+```{r}
+boxplot(distance_m~Road*speed_limit, data=thistle, notch=TRUE, 
+        col=(c("red","blue", "yellow")),
+        main="dispersal distance", xlab="treatments", cex.axis = 0.6)
+
+```
+
+
+angle:
+```{r}
+
+
+```
+
+
+
+##Question 2: Does the graphs suggest there are differences between treatments? Discuss the case of each response:
+
+
+#your answer here#
+
+
+
+4) A formal test will analyze all the factors at once, including their interaction with a Generalized Linear Mixed Model:
+
+
+first install these libraries (if your R doesn't have them - use the #install.packages("MASS")# for example, etc.) and open them
+```{r}
+library(MASS)
+library(lme4)
+library(car)
+
+```
+
+
+
+Now we will specify our model:
+
+```{r}
+
+modeldistance<-glm(log_distance_m~Road+speed_limit,  data=thistle)
+summary(modeldistance)
+
+plot(modeldistance)
+
+```
+
+
+See the results in form of a Type II ANOVA:
+```{r}
+
+Anova(modeldistance)
+library(visreg)
+visreg(modeldistance)
+```
+
+
+
+
+
+Discuss whether or not roads and cars are affecting the dispersal distance of thistle seeds. Base your conclusions on the significance tests for each parameter.  
+
+#your answer here#
+
