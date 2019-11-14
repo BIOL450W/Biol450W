@@ -1,0 +1,13 @@
+Elev,Asp,plot,richness
+low,south_facing,1,8
+low,south_facing,2,6
+low,south_facing,3,4
+high,south_facing,4,6
+high,south_facing,5,6
+high,south_facing,6,4
+high,north_facing,7,4
+high,north_facing,8,3
+high,north_facing,9,4
+low,north_facing,10,5
+low,north_facing,11,4
+low,north_facing,12,6

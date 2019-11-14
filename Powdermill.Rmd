@@ -1,0 +1,150 @@
+---
+title: "Powdermill"
+author: "T. Carlo"
+date: "10/1/2019"
+output:
+  html_document: default
+  word_document: default
+---
+
+##Introduction {max. 400 words}
+1. Introduce seed predation and its importance for forest dynamics. Use existing literature to build the argument that seed predation rates can vary according to forest successional stages and microhabitats. Make the necessary links between "pattern and process" by mentioning the relevant mechanisms that underlie differences between habitats. Make an argument that justifies more research in this particular area of ecology.  
+
+2.Finish the intro with a paragraph stating the general goals of the project in Powdermill (e.g., Here we condcuted a study to examine... yada yada yada) and the hypothesis and/or predictions (e.g., We hypothesized that... yada yada yada;  or:  We predicted that yada yada yada...)
+
+
+##Methods (Max.500 words)
+3. Study Site Description (describe the study site, the location, the type of forest, the study area in a way that a reader can picture what was out there)
+
+4.Experimental Design (Describe the experiment, the independent variables, the dependent variables, how it was conducted - including how you got the seeds - and how the data was collected.)
+
+5. Describe the statistical analysis (this can be one sentence at the end of the paragrap: "Data were analyzed using.... yada yada yada, you can do this by returning to this section after we have analyzed the data and discussed the topic)
+
+##Results (Max 200 words)
+5. Describe the results. Start by describing if there were differences in predation rate among habitats and microhabitats. Describe any significant interaction and explain it. Describe if there were differences between speciesi in their responses.
+
+
+```{r}
+library(car)
+
+library(RCurl)
+
+pred <-read.csv("Powdermill_2019.csv", header=TRUE)
+
+names(pred)
+
+
+pred$failures <- pred$total-pred$predated
+
+prop.pred <- cbind(pred$predated,pred$failures)
+
+boxplot(predated ~ hab, data=pred, notch=FALSE, 
+        col=(c("darkgreen","lightgreen")),
+        main="Figure1: Habitat effects", xlab="treatments", cex.axis = 1.0)
+
+library(dplyr)
+
+pred_summary <- pred %>% # the names of the new data frame and the data frame to be summarised
+  group_by(hab) %>%   # the grouping variable
+  summarise(mean_pred = mean(predated),  # calculates the mean of each group
+            sd_pred = sd(predated), # calculates the standard deviation of each group
+            n_pred = n(),  # calculates the sample size per group
+            SE_pred = sd(predated)/sqrt(n())) # calculates the standard error of each group
+
+PredPlot <- ggplot(pred_summary, aes(hab, mean_pred)) + 
+  geom_col() +  
+  geom_errorbar(aes(ymin = mean_pred - SE_pred, ymax = mean_pred + SE_pred), width=0.2)
+
+PredPlot + labs(y="seed predates ± SE", x = "Habitat") + theme_set(theme_classic(base_size = 18)) 
+
+
+ggplot(pred_summary, aes(x=hab, y=mean_pred)) +
+  geom_bar(stat="identity", fill="blue", alpha=0.7) +  
+  geom_errorbar( aes( x=hab,ymin=mean_pred - SE_pred, ymax=mean_pred + SE_pred), width=0.2, colour="orange", alpha=1.0, size=1.3) +
+  theme_set(theme_classic(base_size = 10)) +  labs(y="seed predation ± SE", x = "Habitat") 
+
+
+
+boxplot(predated ~ mi_hab, data=pred, notch=FALSE, 
+        col=(c("green","brown")),
+        main="Figure2: Microhabitat effects", xlab="treatments", cex.axis = 1.0)
+
+pred_summary1 <- pred %>% # the names of the new data frame and the data frame to be summarised
+  group_by(mi_hab) %>%   # the grouping variable
+  summarise(mean_pred = mean(predated),  # calculates the mean of each group
+            sd_pred = sd(predated), # calculates the standard deviation of each group
+            n_pred = n(),  # calculates the sample size per group
+            SE_pred = sd(predated)/sqrt(n())) # calculates the standard error of each group
+
+PredPlot <- ggplot(pred_summary1, aes(mi_hab, mean_pred)) + 
+  geom_col() +  
+  geom_errorbar(aes(ymin = mean_pred - SE_pred, ymax = mean_pred + SE_pred), width=0.2)
+
+PredPlot + labs(y="seed predation ± SE", x = "Micro Habitat") + theme_set(theme_classic(base_size = 18)) 
+
+
+ggplot(pred_summary1, aes(x=mi_hab, y=mean_pred)) +
+  geom_bar(stat="identity", fill="green", alpha=0.7) +  
+  geom_errorbar( aes( x=mi_hab,ymin=mean_pred - SE_pred, ymax=mean_pred + SE_pred), width=0.2, colour="orange", alpha=1.0, size=1.3) +
+  theme_set(theme_classic(base_size = 10)) +  labs(y="Avg. seed predation ± SE", x = "Micro Habitat") 
+
+
+
+boxplot(predated ~ mi_hab*hab, data=pred, notch=FALSE, 
+        col=(c("yellow","blue")),
+        main="predation by hab & microhabitat", xlab="treatments", cex.axis = 0.6)
+
+
+
+boxplot(predated ~ plant*hab, data=pred, notch=FALSE, 
+        col=(c("yellow","blue", "green", "orange", "lightblue", "pink")),
+        main="Plant species predation rates by habitat", xlab="treatments", cex.axis = 0.75, las = 2)
+
+pred_summary2 <- pred %>% # the names of the new data frame and the data frame to be summarised
+  group_by(plant) %>%   # the grouping variable
+  summarise(mean_pred = mean(predated),  # calculates the mean of each group
+            sd_pred = sd(predated), # calculates the standard deviation of each group
+            n_pred = n(),  # calculates the sample size per group
+            SE_pred = sd(predated)/sqrt(n())) # calculates the standard error of each group
+
+PredPlot <- ggplot(pred_summary2, aes(plant, mean_pred)) + 
+  geom_col() +  
+  geom_errorbar(aes(ymin = mean_pred - SE_pred, ymax = mean_pred + SE_pred), width=0.2)
+
+PredPlot + labs(y="seed predation ± SE", x = "Plant species") + theme_set(theme_classic(base_size = 18)) 
+
+
+ggplot(pred_summary2, aes(x=plant, y=mean_pred)) +
+  geom_bar(stat="identity", fill="green", alpha=0.7) +  
+  geom_errorbar( aes( x=plant,ymin=mean_pred - SE_pred, ymax=mean_pred + SE_pred), width=0.2, colour="orange", alpha=1.0,)
+
+
+
+boxplot(predated ~ plant*mi_hab, data=pred, notch=FALSE, 
+        col=(c("yellow","blue", "green", "orange", "lightblue", "pink")),
+        main="Plant species predation rates by microhabitat", xlab="treatments", cex.axis = 0.5, las = 2)
+
+ggplot(pred, aes(x=predated, fill = plant)) + geom_histogram() + theme_classic()
+
+
+
+model <- glm ( prop.pred ~ hab + mi_hab + plant + hab:mi_hab + plant:hab + plant:mi_hab, family = binomial(link = ("logit")), data = pred)
+
+summary(model)
+Anova(model)
+
+
+
+```
+
+
+
+##Discussion (Max. 350 words)
+6. Start by explaining the "punch line" or main result and what the potential implication of this resutls are for forest regeneration and/or seed dispersal. Compare your results with those of previous sutudies. Make sure you cite primary literature (as in the introduction). Finish making  propositions for future research directions or follow-up studies based on what we learned with this experiment.
+
+##Literature cited (follow APA style)
+
+
+
+
+
