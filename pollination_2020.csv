@@ -1,0 +1,25 @@
+Group,Plant_Sp,No_flowers,Density,Neighb,Spp_richness,No_insects,log_insect,diversity_Shannon_H
+Group_NNB,Goldenrod,5,Low,Low,2,2,1.098612289,0.184443973
+Group_NNB,Goldenrod,19,Low,Low,5,6,1.945910149,0.518674559
+Group_NNB,Goldenrod,56,High,Low,5,8,2.197224577,0.62072261
+Group_NNB,Goldenrod,162,High,Low,9,24,3.218875825,1.508552351
+Group_NNB,Thistle,3,Low,Low,0,0,0,0
+Group_NNB,Thistle,4,Low,Low,2,2,1.098612289,0.732408192
+Group_NNB,Thistle,17,High,High,0,0,0,0
+Group_NNB,Thistle,30,High,Low,1,1,0.693147181,0.366204096
+"Mike, Max, Kyle",Goldenrod,4,Low,High,0,0,0,0
+"Mike, Max, Kyle",Goldenrod,5,Low,High,0,0,0,0
+"Mike, Max, Kyle",Goldenrod,33,High,High,2,5,1.791759469,0.712777687
+"Mike, Max, Kyle",Goldenrod,42,High,High,1,1,0.693147181,0.298626578
+"Mike, Max, Kyle",Thistle,3,Low,Low,1,1,0.693147181,0.154970473
+"Mike, Max, Kyle",Thistle,4,Low,Low,3,4,1.609437912,0.546919029
+"Mike, Max, Kyle",Thistle,30,High,Low,3,5,1.791759469,0.601387265
+"Mike, Max, Kyle",Thistle,52,High,High,5,9,2.302585093,1.075343433
+"S,E,L",Goldenrod,1,Low,Low,6,10,2.397895273,0.681082154
+"S,E,L",Goldenrod,5,Low,High,0,0,0,0
+"S,E,L",Goldenrod,33,High,High,10,18,2.944438979,1.125373989
+"S,E,L",Goldenrod,56,High,Low,11,21,3.091042453,1.352970168
+"S,E,L",Thistle,3,Low,High,2,2,1.098612289,0.299573227
+"S,E,L",Thistle,5,Low,Low,1,1,0.693147181,0.149786614
+"S,E,L",Thistle,30,High,High,3,4,1.609437912,0.529831737
+"S,E,L",Thistle,42,High,Low,6,13,2.63905733,1.310759938
