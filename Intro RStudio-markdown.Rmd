@@ -1,0 +1,135 @@
+---
+title: "introduction to R"
+author: "Your name here"
+date: "8/26/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+### I. We will start by telling R to fetch a data file in csv (comma sepparated values) format from the our course's GitHub page. By writing " ```{r} " we open a chunk of code that can be executed in R:
+
+```{r, echo=FALSE}
+library(RCurl)
+
+## opens the library RCurl used to retrieve internet documents such as the file from GitHub ##
+
+data1 <-read.csv(text=getURL("https://raw.githubusercontent.com/BIOL450W/Biol450W/master/pollination.csv"), header=T)
+
+```
+
+Note that:
+
+> a) We called a "library" in order to open the package "RCurl" in your session. Every single time you open RStudio, you need to call any packaes that you will be using in the session. THe packages "go away" every time you close RStudio, irrepectively that they are already installed in your computer.
+
+> b) To close the code "chunk" we write  " ``` " at the en of code.
+
+> c) To write comments and notes inside a "chunk" of code  you use " ## " before the text to be added - this way it does not interfers with the commands.
+
+
+
+### II. During the semester you will be exploring and analyzing data organized in TABLE format. Thus, it is always a good idea to first check that the table we just opened is what we want, or to verify the format of the data (e.g., numeric vs. factor). For this we open a new "chunk" in the space below where you are going to write the following code: "names(data1)" and "head(data1)"
+
+
+> Question 1: What is the differences between the two commands?
+
+
+> Question 2: What is this data table about? Not that you can always look a the entire data table by clicking on the file name in the upper right window of RStudio - specifically under the "Environment" tab.
+
+
+
+### III.  Now that you have figured out what this data is about, lets check some of the examine the distribution of the numeric variables in this study by creating a histogram for every numeric variable.
+
+> Question 3: How many numeric variables are in the "data1" file? What are their names?
+
+
+
+
+
+```{r, echo=FALSE}
+## the "echo=FALSE" comand prevents the code to show up in your final printout ##
+
+hist(data1$flower_abundance)
+
+## notice that inside the parenthesis we are specifying the name of the datatable (data1) and the column (visit.time) following a "$" operator. ##, 
+
+## we can add color, a better title, and a better title to the the x-axis like this:
+
+hist(data1$flower_abundance, main = "Histogram of visit time for bees", col = "lightblue", xlab = "Time spent on plant (sec)")
+
+
+```
+
+
+### You can use what you have learned so far to create a histogram of another numeric variable (flower_abundance) in a brand new chunk below. Make sure to make the color histogram, and to change the title and x-axis label accordingly.
+  
+  
+  
+
+### IV. Let's try now some other forms of visualization of the information in the data1 study. We can see how the numeric variables depend on the factors (i.e., character or nominal variables)
+
+> Question 4. How many "factor" variables are in data1,  what are their names?
+  
+
+### We can create Box plots examine how a numeric response variable is different (or not) according to the "levels" of a factor:
+
+```{r, echo=FALSE}
+boxplot(visit.time~Insect, data=data1)
+
+boxplot(visit.time~plant_sp, data=data1)
+
+```
+
+
+### Again, we can make these graphs much better-looking by adding a labels to the x and y axes, and rescaling the y axis:
+
+
+```{r, echo=FALSE}
+boxplot(visit.time~Insect, data=data1,
+        col=(c("blue")),
+        main="Visit length of pollinators", ylab = "seconds", xlab="Bee sp.", cex.axis = 0.6,  ylim = c(-100, 450))
+        
+        
+boxplot(visit.time~plant_sp, data=data1,
+        col=(c("yellow")),
+        main="Visit length of pollinators", ylab = "seconds", xlab="Plant sp.", cex.axis = 0.6,  ylim =          c(-10, 500))
+```
+
+### We can also choose to plot all of these at the same time:
+
+```{r, echo=FALSE}
+boxplot(visit.time ~    plant_sp + Insect, data=data1, 
+        col=(c("gold","purple")),
+        main="Visit length of pollinators", ylab= "seconds", xlab="Bee sp. & Plant sp.", cex.axis =         0.6,  ylim = c(-10, 500))
+```
+
+
+
+### V. Another basic visualization tool is the "scatterplot" consisting of a numeric x (predictor) and a numeric y (response). In this data set, we can use the number of flowers (a measure of resource abundance) to see if that affects the foraging time of bees. Lets create a chunk with the code to make a scatterplot and a "best fit" regression line.
+
+```{r, echo=FALSE}
+
+## we create a scatterplot with this code:
+
+plot(log(data1$visit.time), log(data1$flower_abundance), main="Influence of flower resource density on foraging time", 
+   xlab="log of flowers per plant) ", ylab="log of visit time (sec) ", pch=19)
+
+## ten we fit the regression line with this code:
+abline(lm(log(data1$visit.time) ~log(data1$flower_abundance)), col = "gray", lwd=3)
+
+
+```
+
+We could fit lines for each bee species or plant species sepparately, but we will learn that in another class!
+
+
+### VI.  To finish, select "Knit" from the menus of this window - the entire document will be printed as an HTML (or docx or PDF if you choose those formats).
+ 
+ 
+
+
+
+
+
+
+

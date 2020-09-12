@@ -1,0 +1,177 @@
+---
+title: "Pollination Report"
+author: "Your name here"
+date: "9/10/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Today we will analyze the pollination study. Before we jump into any analyses, we must remind ourselves and the reader why we did the study.
+
+### I. Describe birefly the motivation and objective(s) of the study. You can start by introducing the general importance of insect-plant pollination mutualisms (3-4 sentences), then follow with  specific objective(s) of the study (2-3 sentences).
+
+
+### II. Hypotheses and predictions. Write the hypothesis that we will be testing in the study. Following each hypothesis, state one or more predictions that anticipate specific results if the hypothesis is true or not true. Predictions typically illustrate some of the possible outcomes of a given hypothesis.
+
+
+### III. Now we can move to analyze the data to formally examine if our hypotheses are supported by our observations or not. We start by uploading the data file from github:
+
+```{r, echo=FALSE}
+library(RCurl)
+
+## upload our file from GitHub:
+
+pollidat <-read.csv(text=getURL("https://raw.githubusercontent.com/BIOL450W/Biol450W/master/pollination_2020.csv"), header=T)
+
+```
+
+
+### IV. Now, create a chunk here  for checking the names of the columns in the data table This is important to create R code. Recall what you did las time (check your previous Markdown report to find appropriate commands).
+
+```{r, echo=FALSE}
+
+names(pollidat)
+```
+
+
+
+### V. To examine how our study factors (Plant_Sp, No_flowers, Density, Neighb) affect our response variables (Spp_richness, No_insects, diversity_Shannon_H) we must first examine the frequency distribution of each response variable. Create a chunk with histograms for each of the three responses we will be examining. 
+
+
+
+```{r, echo=FALSE}
+
+## Use the command "hist(name_of_data_table$name _of_variable)" and make sure you use the appropriate names for the data table and each response variable in every case.
+
+hist(pollidat$No_insects)
+
+
+
+```
+
+### VI. Explain below what you see in the histograms briefly. The shape of the response's distribution is important because if we want to employ "frequentist" analyses to test our hypotheses based on the Central Limit Theorem (classic stat approaches), then we want the distributions of our response variables to be close to a "normal" or bell-shape distribution. This is because to test our biological hypotheses we will be relying on the comparison of different averages (slopes) calculated for each level of the study factors (Density, Plant_Sp, etc.).
+
+
+### VII. Luckily, we have options to deal with weird-looking data distributions. In the cases we have discrete numerical distributions such as "count data" (e.g., Spp_richness, No_insects) the best thing to do will be to use statistical tests explicitely designed for that kind of data . In the case we have truly a continuous numeric variable (like the diversity_Shannon_H), we can use a data "transformation", such as taking the log + 1 of the original data values. We will do that and test whether the data distribution improves with a transformation:
+
+
+```{r, echo=FALSE}
+
+## First we go back and check if "diversity_Shannon_H" is normally distributed with a Wikl-Shapiro test:
+
+shapiro.test(pollidat$diversity_Shannon_H)
+
+```
+
+
+```{r, echo=FALSE}
+
+## In this chunk  we transform the data in the original data column and redo the normality test:
+
+pollidat$diversity_Shannon_H <- log((pollidat$diversity_Shannon_H) + 1)
+
+hist(pollidat$diversity_Shannon_H)
+shapiro.test(pollidat$diversity_Shannon_H)
+## then we 
+
+```
+
+
+> Explain briefly if the transformation worked. The null hypothesis being tested is that the distribution "is normal", therefore, small p-values (p <= than 0.05) REJECT the null and leads to the conclusion that the distribution is NOT normal.
+
+
+
+### VIII. Now we are ready to test the effects of our factors in the three responses. Start by plotting the effects of Plant species & Density on the three responses (No_insects, Spp_richness, diversity_Shannon_H) in this chunk:
+
+
+```{r, echo=FALSE}
+
+##  one plot for No_insects
+boxplot(No_insects~Plant_Sp*Density, data = pollidat,
+        col=(c("gold", "purple")),
+        main = "insect visitation", xlab = "Flower sp. & Density of flowers", cex.axis = 1.0, ylim = c(0, 25))
+
+## repeat commmands but for Spp_richness, make necessary adjustments fo Y- axis limits (set max to around 15)
+
+
+## now the one plot for diversity_Shannon_H, again, make proper adjustments to the y-axis
+
+
+
+```
+
+> Wait!!, what about that covariate or ours "Neighb"?? Please repeat the graphs you just did with "Neighb" instead of "Density"
+
+```{r, echo=FALSE}
+## repeat the three boxplots for each of the responses as in the previous chunk, but using "Neigh"
+boxplot(No_insects~Plant_Sp*Neighb, data = pollidat,
+        col=(c("gold", "purple")),
+        main = "insect visitation", xlab = "Flower sp. & Density of flowers", cex.axis = 1.0, ylim = c(0, 25))
+
+boxplot(Spp_richness~Plant_Sp*Neighb, data = pollidat,
+        col=(c("gold", "purple")),
+        main = "insect visitation", xlab = "Flower sp. & Density of flowers", cex.axis = 1.0, ylim = c(0, 13))
+```
+
+> Now that we have seen the trends in the data, lets conduct an analyses for each of the responsesWwe will use "Generalized Linear Models " of just GLMs and specify a "poisson" error distributin for count data (No_inects, Spp_richness). For diversity we will use the same GLM approach but with a normal (Gaussian) error distribution:
+
+```{r, echo=FALSE}
+
+## first the linear model template for "No_insects"
+model1 <- glm(No_insects~Plant_Sp*Density, data = pollidat, family = poisson(link = "log"))
+summary(model1)
+
+## do the same here for Spp_richness:
+model2 <- glm(Spp_richness~Plant_Sp*Density, data = pollidat, family = poisson(link = "log"))
+summary(model2)
+
+## and the model for 
+model3 <- glm(diversity_Shannon_H~Plant_Sp*Density, data = pollidat, family = gaussian(link = "identity"))
+summary(model3)
+```
+
+
+### IX. Discuss the findings of these analyses :
+
+> Where there any differences between Goldenrods and Thistles in the ways insect communities interacted with them? Explain the differences with respect to each variable analyzed. Which factor had the strongest effect - Plant sp. or Density? Why?  Which hypothesese were supported and which hypotheses were rejected? Can you say that the diveristy of insect visitors was equal in both species despite that one species had a higher richness of species visiting? Why?
+
+
+
+### X.  In the chunk below repeat the last set of models but using "No_flowers" instead of "Density".
+
+
+```{r, echo=FALSE}
+## first the linear model template for "No_insects"
+model1 <- glm(No_insects~Plant_Sp*No_flowers, data = pollidat, family = poisson(link = "log"))
+summary(model1)
+
+## do the same here for Spp_richness:
+model2 <- glm(Spp_richness~Plant_Sp*No_flowers, data = pollidat, family = poisson(link = "log"))
+summary(model2)
+
+## and the model for 
+model3 <- glm(diversity_Shannon_H~Plant_Sp*No_flowers, data = pollidat, family = gaussian(link = "identity"))
+summary(model3)
+
+
+
+```
+
+> Are there any differences in the outcome? Which factor (Density or No+flowers) you think is best to use in the model? Why?
+
+
+
+### XI. Bonus (2 pt.).  Conduct analyses to test the effects of the number of flowers in the neighborhood ("Neighb") on the responses and explain the results.
+
+
+
+
+
+
+
+
+
+
+
+
