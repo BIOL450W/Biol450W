@@ -1,0 +1,108 @@
+ ---
+title: "Forest community analysis"
+author: "Your name here"
+date: "10/22/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+One of the most striking features of the terrestrial ecosystems of our beloved planet is how drastic are the changes you can see in plant communities as you roam across an environmental gradient. Gradients of disturbance history, moisture, elevation, latitude, cardinal orientation, slope, seasonality, and solar radiation – among a myriad of biotic factors such as competition and mutualisms – drive changes in community structure and composition.
+
+Vegetation sampling has a long tradition and is a core component of Plant Community Ecology. As heterotrophs we depend completely on plant communities, and thus, we have tried hard to understand what drives their structure and differences on the globe.
+
+We can think of three realms of factors that affect the membership of tree species in a given site or community:
+
+> Ultimate factors – evolutionary constrains, biogeography, and dispersal
+> Proximate factors – predictable biotic interactions (both positive and negative)
+> Chance – randomness and stochasticity in births and deaths, disturbance accidents such as fire, floods, unpredictable biotic effects such as large herbivore outbreaks
+
+As we walked in the Arboretum forest, we saw changes and patterns that caught our eye. Some of the patterns may be due to random and historical forces; others may have an ecological/biological basis. 
+
+
+For analyses, start by Installing two packages:
+```{r, echo=FALSE}
+install.packages("vegan")
+install.packages("MASS")
+
+```
+
+Follow by downloading these files from Canvas and saving them to your computer in a folder you can find later on:
+> Forest_ind.csv
+> Forest_basal.csv
+> summary_forest.csv
+
+Follow y making a Non Metric Multidimensional Scaling Ordination or NMDS (more info here http://ordination.okstate.edu/overview.htm ) for the trees using the number of individual trees/shrubs of each species found in each plot:
+
+```{r, echo=FALSE}
+
+library(vegan) ## install library vegan first if not in your R version
+library(MASS) ## install library MASS first if not in your R version
+
+# 
+trees_i<-read.csv(file.choose(), head = TRUE, row.names = 1)
+
+
+m<-metaMDS(trees_i, distance="chao", k=2, try=100, trymax=10000)
+
+treat=c(rep("mature",9),rep("successional",9))
+ordiplot(m, type="n")
+orditorp(m,display="species",col="black",air=0.1, cex=.7)
+orditorp(m,display="sites", air=0.01,cex=1) 
+ordiellipse(m,groups=treat, kind = "se", conf = 0.95, draw = "lines", lwd = 3, lty = 2,  col = c(rep("blueviolet"), rep("red")), w = NULL, label=FALSE)
+
+
+```
+
+
+> Question 1: Are there any clear-cut communities as a function of forest disturbance history (i.e., mature vs. successional)? Interpret the meaning of Axis 1 and axis two.
+
+> Question 2: Are there any strong associations between tree species and each habitat type? Discuss using the scores of tree specie on Axis 1 & 2.
+
+
+Now lets follow with an ordination using the cummulative basal area of each plant species in each plot
+
+```{r, echo=FALSE}
+library(vegan) ## install library vegan first if not in your R version
+library(MASS) ## install library MASS first if not in your R version
+
+# 
+trees_dbh<-read.csv(file.choose(), head = TRUE, row.names = 1)
+
+
+m<-metaMDS(trees_dbh, distance="chao", k=2, try=100, trymax=10000)
+
+treat=c(rep("mature",9),rep("successional",9))
+ordiplot(m, type="n")
+orditorp(m,display="species",col="black",air=0.1, cex=.7)
+orditorp(m,display="sites", air=0.01,cex=1) 
+ordiellipse(m,groups=treat, kind = "se", conf = 0.95, draw = "lines", lwd = 3, lty = 2,  col = c(rep("lightblue"), rep("orange")), w = NULL, label=FALSE)
+
+
+```
+
+
+> Question 3: Compare the ordination using individual trees to that using the DBH of trees: Is there a difference? Explain.
+
+> Question 4: Are there significant changes in the importance (scores) of species along Axis 1 & 2 between the two ordinations? Discuss.
+
+
+Here create a chunk to with a boxplot of the species richness per forest type and a test for differences in the species richness between the two types of stands. use the file "summary_forest.csv" (note that this file is also in the Github and you can use a command to access it from there instead than from your computer, its up to you):
+
+```{r, echo=FALSE}
+
+```
+
+> Question 5: Is there a difference in species richness between the two forest stands? How the differences in sampling effort (100m2 vs. 50m2) in the two habitat types may have played a role in your reulsts?
+
+
+Here create a chunk with a boxplot of the avergae DBH per forest type and a test for differences in the basal area between the two types of stands (use the file "summary_forest.csv")
+
+
+```{r, echo=FALSE}
+
+```
+
+> Question 6: Are there differences in dbh? Use the results of the ordination based on DBH to discuss which tree species were more important in each community type.
+
+
