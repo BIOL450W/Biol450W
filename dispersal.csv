@@ -1,0 +1,145 @@
+Treatment,trial,height_m,tree_sp,dist_cm,wind,ratio.L/M,observer
+yes,1,2.5,Elm,172,2,4178,Chloe
+yes,2,2.5,Elm,217,2,4178,Chloe
+yes,3,2.5,Elm,306,2,4178,Chloe
+yes,4,2.5,Elm,100,3.2,4178,Chloe
+yes,5,2.5,Elm,160,2.5,4178,Chloe
+yes,6,2.5,Elm,175,0.3,4178,Chloe
+yes,7,2.5,Elm,110,0.7,4178,Chloe
+yes,8,2.5,Elm,125,2.5,4178,Chloe
+yes,9,2.5,Elm,224,2.1,4178,Chloe
+yes,10,2.5,Elm,35,1.8,4178,Chloe
+yes,11,2.5,Elm,196,2.8,4178,Chloe
+yes,12,2.5,Elm,295,2.5,4178,Chloe
+yes,1,1,Elm,12,3.9,4178,Haley
+yes,2,1,Elm,305,1,4178,Haley
+yes,3,1,Elm,35,1.4,4178,Haley
+yes,4,1,Elm,92,0,4178,Haley
+yes,5,1,Elm,64,1.8,4178,Haley
+yes,6,1,Elm,99,2.8,4178,Haley
+yes,7,1,Elm,93,1,4178,Haley
+yes,8,1,Elm,220,1.4,4178,Haley
+yes,9,1,Elm,71,3.6,4178,Haley
+yes,10,1,Elm,93,2.5,4178,Haley
+yes,11,1,Elm,163,3.6,4178,Haley
+yes,12,1,Elm,168,2.1,4178,Haley
+no,1,2.5,Elm,235,6.1,4178,Julia
+no,2,2.5,Elm,104,2.5,4178,Julia
+no,3,2.5,Elm,365,5.7,4178,Julia
+no,4,2.5,Elm,135,3.6,4178,Julia
+no,5,2.5,Elm,94,1.8,4178,Julia
+no,6,2.5,Elm,90,1.4,4178,Julia
+no,7,2.5,Elm,81,0,4178,Julia
+no,8,2.5,Elm,62,0,4178,Julia
+no,9,2.5,Elm,79,0,4178,Julia
+no,10,2.5,Elm,95,2.1,4178,Julia
+no,11,2.5,Elm,50,0.7,4178,Julia
+no,12,2.5,Elm,72,0,4178,Julia
+no,1,1,Elm,26,0,4178,Ellie
+no,2,1,Elm,46,0,4178,Ellie
+no,3,1,Elm,22,0,4178,Ellie
+no,4,1,Elm,18,0,4178,Ellie
+no,5,1,Elm,20,0,4178,Ellie
+no,6,1,Elm,6,0,4178,Ellie
+no,7,1,Elm,20,0,4178,Ellie
+no,8,1,Elm,17,0,4178,Ellie
+no,9,1,Elm,58,1.4,4178,Ellie
+no,10,1,Elm,32,3.2,4178,Ellie
+no,11,1,Elm,26,1.8,4178,Ellie
+no,12,1,Elm,11,0.7,4178,Ellie
+yes,1,2.5,Ash,37,0,1103,Kyle
+yes,2,2.5,Ash,104,1,1103,Kyle
+yes,3,2.5,Ash,48,0.7,1103,Kyle
+yes,4,2.5,Ash,84,1.8,1103,Kyle
+yes,5,2.5,Ash,30,3.4,1103,Kyle
+yes,6,2.5,Ash,104,3.6,1103,Kyle
+yes,7,2.5,Ash,65,1.8,1103,Kyle
+yes,8,2.5,Ash,48,3.2,1103,Kyle
+yes,9,2.5,Ash,80,3.2,1103,Kyle
+yes,10,2.5,Ash,149,0.7,1103,Kyle
+yes,11,2.5,Ash,37,1.8,1103,Kyle
+yes,12,2.5,Ash,45,3.2,1103,Kyle
+yes,1,1,Ash,57,5.7,1103,Travis
+yes,2,1,Ash,57,3.9,1103,Travis
+yes,3,1,Ash,44,3.9,1103,Travis
+yes,4,1,Ash,140,3.6,1103,Travis
+yes,5,1,Ash,105,3.6,1103,Travis
+yes,6,1,Ash,136,3.6,1103,Travis
+yes,7,1,Ash,50,3.2,1103,Travis
+yes,8,1,Ash,74,3.9,1103,Travis
+yes,9,1,Ash,110,3.6,1103,Travis
+yes,10,1,Ash,80,2.5,1103,Travis
+yes,11,1,Ash,25,2.8,1103,Travis
+yes,12,1,Ash,32,1.4,1103,Travis
+no,1,2.5,Ash,32,1.8,1103,Tony
+no,2,2.5,Ash,44,1.8,1103,Tony
+no,3,2.5,Ash,91,1.8,1103,Tony
+no,4,2.5,Ash,66,1.4,1103,Tony
+no,5,2.5,Ash,64,1.4,1103,Tony
+no,6,2.5,Ash,54,1,1103,Tony
+no,7,2.5,Ash,61,0.2,1103,Tony
+no,8,2.5,Ash,51,0,1103,Tony
+no,9,2.5,Ash,47,0,1103,Tony
+no,10,2.5,Ash,47,0,1103,Tony
+no,11,2.5,Ash,51,0,1103,Tony
+no,12,2.5,Ash,56,0,1103,Tony
+no,1,1,Ash,16,0,1103,Hollin Williams
+no,2,1,Ash,10,0,1103,Hollin Williams
+no,3,1,Ash,9,1,1103,Hollin Williams
+no,4,1,Ash,17,1.8,1103,Hollin Williams
+no,5,1,Ash,15,2.1,1103,Hollin Williams
+no,6,1,Ash,10,1.8,1103,Hollin Williams
+no,7,1,Ash,17,1.8,1103,Hollin Williams
+no,8,1,Ash,10,1.8,1103,Hollin Williams
+no,9,1,Ash,5,1.4,1103,Hollin Williams
+no,10,1,Ash,6,1.4,1103,Hollin Williams
+no,11,1,Ash,4,1,1103,Hollin Williams
+no,12,1,Ash,1,0.7,1103,Hollin Williams
+yes,1,2.5,Maple,178,3.2,335,Tony
+yes,2,2.5,Maple,239,0.3,335,Tony
+yes,3,2.5,Maple,203,2.5,335,Tony
+yes,4,2.5,Maple,47,1.8,335,Tony
+yes,5,2.5,Maple,190,1,335,Tony
+yes,6,2.5,Maple,109,1,335,Tony
+yes,7,2.5,Maple,128,1.4,335,Tony
+yes,8,2.5,Maple,78,5,335,Tony
+yes,9,2.5,Maple,114,3.9,335,Tony
+yes,10,2.5,Maple,155,0.7,335,Tony
+yes,11,2.5,Maple,125,2,335,Tony
+yes,12,2.5,Maple,115,2.8,335,Tony
+yes,1,1,Maple,250,1.8,335,Lily Ramoth
+yes,2,1,Maple,68,2.5,335,Lily Ramoth
+yes,3,1,Maple,55,2.1,335,Lily Ramoth
+yes,4,1,Maple,88,2.5,335,Lily Ramoth
+yes,5,1,Maple,44,3.2,335,Lily Ramoth
+yes,6,1,Maple,91,2.8,335,Lily Ramoth
+yes,7,1,Maple,70,2.8,335,Lily Ramoth
+yes,8,1,Maple,91,0.7,335,Lily Ramoth
+yes,9,1,Maple,124,3.9,335,Lily Ramoth
+yes,10,1,Maple,162,4.3,335,Lily Ramoth
+yes,11,1,Maple,156,5.4,335,Lily Ramoth
+yes,12,1,Maple,142,3.2,335,Lily Ramoth
+no,1,2.5,Maple,73,0.7,335,Orion Pizzini
+no,2,2.5,Maple,34,0,335,Orion Pizzini
+no,3,2.5,Maple,50,0,335,Orion Pizzini
+no,4,2.5,Maple,59,0,335,Orion Pizzini
+no,5,2.5,Maple,37,0,335,Orion Pizzini
+no,6,2.5,Maple,54,0,335,Orion Pizzini
+no,7,2.5,Maple,54,0,335,Orion Pizzini
+no,8,2.5,Maple,83,0,335,Orion Pizzini
+no,9,2.5,Maple,49,0,335,Orion Pizzini
+no,10,2.5,Maple,48,0,335,Orion Pizzini
+no,11,2.5,Maple,48,0,335,Orion Pizzini
+no,12,2.5,Maple,46,0,335,Orion Pizzini
+no,1,1,Maple,18,1.8,335,Kaitlyn Frack
+no,2,1,Maple,30,0,335,Kaitlyn Frack
+no,3,1,Maple,15,0.7,335,Kaitlyn Frack
+no,4,1,Maple,14,0,335,Kaitlyn Frack
+no,5,1,Maple,15,0.7,335,Kaitlyn Frack
+no,6,1,Maple,17,0,335,Kaitlyn Frack
+no,7,1,Maple,10,0,335,Kaitlyn Frack
+no,8,1,Maple,19,0,335,Kaitlyn Frack
+no,9,1,Maple,12,0,335,Kaitlyn Frack
+no,10,1,Maple,12,0,335,Kaitlyn Frack
+no,11,1,Maple,15,0,335,Kaitlyn Frack
+no,12,1,Maple,20,0,335,Kaitlyn Frack
