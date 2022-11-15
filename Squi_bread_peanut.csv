@@ -1,0 +1,13 @@
+SquirrelID,Within_10m_3trees,FoodChoice,SizeChoice
+1,Yes,Bread,pieceBread
+2,Yes,Peanut,multiplePeanut
+3,Yes,Peanut,singlePeanut
+4,Yes,Bread,wholeBread
+5,Yes,Peanut,multiplePeanut
+6,Yes,Peanut,singlePeanut
+7,No,Peanut,multiplePeanut
+8,No,Peanut,multiplePeanut
+9,No,Peanut,multiplePeanut
+10,No,Peanut,multiplePeanut
+11,No,Peanut,singlePeanut
+12,No,Bread,wholeBread

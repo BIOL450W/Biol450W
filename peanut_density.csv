@@ -1,0 +1,12 @@
+Site,Peanut_Density,Squirrel_ID,Time_Discovered_sec,Peanuts_Removed,Fights,Total_Time_sec,Times_Visited,Behavior
+BBH,Low,1L,116,4,1,72,4,"Eating, fighting"
+BBH,Low,2L,179,1,1,2,1,"Eating, fighting"
+BBH,High,1h,146,1,1,15,1,"eating, fighting"
+BBH,High,2h,173,1,1,10,1,"eating, fighting"
+BBH,High,3h,415,4,2,27,4,"eating, burying, fighting"
+BBH,High,4h,620,4,4,42,4,"eating, run up tree, fighting"
+Library,Low,3L,871,2,0,30,1,eating
+Library,High,5h,30,2,0,30,2,eating
+Library,High,6h,150,0,1,20,1,fighting
+Library,High,7h,420,1,1,20,1,"fighting, eating"
+Library,High,8h,459,3,0,85,3,"eating, sitting"
