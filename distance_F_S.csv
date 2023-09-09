@@ -1,4 +1,4 @@
-Sample_Label,distance,Area,Effort,Habitat
+Sample_Label,distance,Area,Effort,Region.Label
 F3,0.09,80000,20,Forest
 F3,0.2,80000,20,Forest
 F8,0.35,80000,20,Forest
