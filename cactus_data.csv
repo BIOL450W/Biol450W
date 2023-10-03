@@ -1,49 +1,155 @@
-Site,Height,Flowers_fruits,log_flowers_fruits
-Colony,230,5,1.6094379124
-Colony,209,19,2.9444389792
-Colony,202,9,2.1972245773
-Colony,220,1,0
-Colony,127,1,0
-Colony,167,1,0
-Colony,250,2,0.6931471806
-Colony,180,3,1.0986122887
-Colony,224,3,1.0986122887
-Colony,220,9,2.1972245773
-Colony,215,9,2.1972245773
-Colony,182,5,1.6094379124
-Colony,260,17,2.8332133441
-Colony,235,17,2.8332133441
-Colony,215,12,2.4849066498
-Colony,237,7,1.9459101491
-Colony,227,5,1.6094379124
-Colony,135,3,1.0986122887
-Colony,160,3,1.0986122887
-Colony,188,5,1.6094379124
-Colony,220,9,2.1972245773
-Colony,250,7,1.9459101491
-Colony,230,5,1.6094379124
-Colony,300,11,2.3978952728
-Colony,260,8,2.0794415417
-Colony,123,2,0.6931471806
-Colony,250,10,2.302585093
-Colony,124,1,0
-Outside,190,2,0.6931471806
-Outside,121,2,0.6931471806
-Outside,115,1,0
-Outside,117,1,0
-Outside,147,1,0
-Outside,200,1,0
-Outside,135,2,0.6931471806
-Outside,221,4,1.3862943611
-Outside,120,2,0.6931471806
-Outside,163,2,0.6931471806
-Outside,90,2,0.6931471806
-Outside,171,3,1.0986122887
-Outside,135,3,1.0986122887
-Outside,225,2,0.6931471806
-Outside,168,7,1.9459101491
-Outside,173,1,0
-Outside,207,1,0
-Outside,186,2,0.6931471806
-Outside,181,12,2.4849066498
-Outside,152,1,0
+total_length_cm,fecundity,study_site
+92.5,1,P.Capitan
+262.6,1,P.Capitan
+546.55,1,P.Capitan
+177,1,P.Capitan
+126.4,1,P.Capitan
+188.4,1,P.Capitan
+188.5,1,P.Capitan
+173.2,1,P.Capitan
+157.9,1,P.Capitan
+168.7,1,P.Capitan
+148.9,1,P.Capitan
+102.1,1,P.Capitan
+220.9,1,P.Capitan
+249.8,1,P.Capitan
+235.4,1,P.Capitan
+145.4,1,P.Capitan
+121.9,1,P.Capitan
+599.8,1,P.Capitan
+162.6,1,P.Capitan
+175,1,P.Capitan
+79,1,Outside Colony
+90.4,1,Outside Colony
+167.6,1,Outside Colony
+179.8,1,Outside Colony
+198,1,Outside Colony
+215.4,1,Outside Colony
+286.9,1,Outside Colony
+152.4,1,Outside Colony
+188.2,1,Outside Colony
+154.4,1,Outside Colony
+100,1,Outside Colony
+114,1,Outside Colony
+125.8,1,Outside Colony
+140.1,1,Outside Colony
+144,1,Outside Colony
+130,1,Outside Colony
+169.4,1,Outside Colony
+58,1,Outside Colony
+93.7,1,Outside Colony
+135.6,1,Outside Colony
+142.1,1,Outside Colony
+266.9,1,Outside Colony
+106.6,1,Outside Colony
+118.7,1,Outside Colony
+363.7,1,Outside Colony
+204.3,1,Outside Colony
+229.4,1,Outside Colony
+428.7,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,Outside Colony
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+,1,P.Capitan
+261.8,2,P.Capitan
+347,2,P.Capitan
+211.8,2,P.Capitan
+358.8,2,P.Capitan
+487.8,2,P.Capitan
+296.1,2,P.Capitan
+362.8,2,P.Capitan
+155.1,2,P.Capitan
+274.3,2,P.Capitan
+191,2,P.Capitan
+238.1,2,P.Capitan
+218.4,2,Outside Colony
+174.5,2,Outside Colony
+211,2,Outside Colony
+166.2,2,Outside Colony
+149.8,2,Outside Colony
+112.6,2,Outside Colony
+127.4,2,Outside Colony
+76.7,2,Outside Colony
+222.6,2,Outside Colony
+326,2,Outside Colony
+177.3,2,Outside Colony
+161.8,2,Outside Colony
+286.6,2,Outside Colony
+370,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,Outside Colony
+,2,P.Capitan
+,2,P.Capitan
+,2,P.Capitan
+,2,P.Capitan
+,2,P.Capitan
+750.7,3,P.Capitan
+1013.5,3,P.Capitan
+317.8,3,P.Capitan
+152.7,3,P.Capitan
+251.5,3,P.Capitan
+310.3,3,P.Capitan
+112.8,3,Outside Colony
+306.4,3,Outside Colony
+262.3,3,Outside Colony
+167.2,3,Outside Colony
+,3,Outside Colony
+,3,Outside Colony
+,3,P.Capitan
+,3,P.Capitan
+,3,P.Capitan
+,3,P.Capitan
+,3,P.Capitan
+548,4,P.Capitan
+298.3,4,P.Capitan
+231.1,4,P.Capitan
+521.8,4,P.Capitan
+903.4,4,P.Capitan
+208.2,4,P.Capitan
+430.1,4,P.Capitan
+501.6,4,Outside Colony
+307.3,4,Outside Colony
+203,4,Outside Colony
+,4,Outside Colony
+,4,P.Capitan
+,4,P.Capitan
+296.3,5,P.Capitan
+314.3,5,P.Capitan
+405.2,5,P.Capitan
+447.7,5,P.Capitan
+280.4,5,Outside Colony
+407.2,5,Outside Colony
+420.6,5,Outside Colony
+271.6,5,Outside Colony
+,5,P.Capitan
+,5,P.Capitan
+,5,P.Capitan
+,5,P.Capitan
+502.8,6,P.Capitan
+,6,P.Capitan
+,6,P.Capitan
+,7,Outside Colony
+531,8,Outside Colony
+572.5,9,P.Capitan
+661,9,Outside Colony
+1093.5,11,P.Capitan
+,12,Outside Colony
