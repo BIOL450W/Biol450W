@@ -1,0 +1,25 @@
+Team_members,Distance_to_road,Road_class,LDD,avg_wind_speed,total,disp_dist,median
+"Jordan, Dallon, Omonefe",away,fast,8,1.342105263,10,8.552631579,7
+"Jordan, Dallon, Omonefe",away,slow,6,0.92,10,6.15,3
+"Jordan, Dallon, Omonefe",curb,fast,10,1.342105263,10,10.36842105,11
+"Jordan, Dallon, Omonefe",curb,slow,5,1.175,10,6.75,5
+"Kelly, Gemma, Ziyang",away,fast,3,1.03,10,5.375,3.5
+"Kelly, Gemma, Ziyang",away,slow,7,1.385,10,7.05,5.5
+"Kelly, Gemma, Ziyang",curb,fast,6,1.215,10,6.5,3.5
+"Kelly, Gemma, Ziyang",curb,slow,2,1.115,10,4.475,4
+"Noor, Kiya, Lauren",away,fast,1,1.055,10,4,3.5
+"Noor, Kiya, Lauren",away,slow,3,0.721052632,10,4.315789474,3
+"Noor, Kiya, Lauren",curb,fast,4,1.026315789,10,6.263157895,5
+"Noor, Kiya, Lauren",curb,slow,2,0.823529412,10,5.147058824,3
+"Sae, Micky, Abigail",away,fast,1,0.144444444,10,2.833333333,2
+"Sae, Micky, Abigail",away,slow,1,0.544444444,10,3.444444444,2
+"Sae, Micky, Abigail",curb,fast,3,0.93,10,6.9,7
+"Sae, Micky, Abigail",curb,slow,4,0.830769231,10,6.307692308,4
+"Ty, Anisha",away,fast,6,1.016666667,10,7.277777778,6
+"Ty, Anisha",away,slow,5,1.010526316,10,5.421052632,2
+"Ty, Anisha",curb,fast,7,1.347368421,10,8.157894737,4
+"Ty, Anisha",curb,slow,1,0.933333333,10,4.027777778,3.75
+"William, Devin, Sarah",away,fast,7,0.765,10,6.2,4.25
+"William, Devin, Sarah",away,slow,0,0.605,10,3.2,2
+"William, Devin, Sarah",curb,fast,7,1.55,10,7.825,6.5
+"William, Devin, Sarah",curb,slow,5,0.86,10,6,3.75
