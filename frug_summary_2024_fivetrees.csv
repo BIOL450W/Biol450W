@@ -1,0 +1,26 @@
+students,TreeID,visits,Sum(time_on_tree),Sum(Fruit_handled)
+Anisha.Ty.Ziyang,five,5,19.5,4
+Anisha.Ty.Ziyang,four,2,14,5
+Anisha.Ty.Ziyang,one,1,0,0
+Anisha.Ty.Ziyang,three,1,0,0
+Anisha.Ty.Ziyang,two,1,0,0
+mystery1,five,10,10,4
+mystery1,four,1,0,0
+mystery1,one,1,0,0
+mystery1,three,3,6,0
+mystery1,two,1,1,1
+mystery2,five,7,0,0
+mystery2,four,1,0,0
+mystery2,one,2,3,6
+mystery2,three,1,0,0
+mystery2,two,2,1.5,0
+mystery3,five,9,4.5,29
+mystery3,four,1,0,0
+mystery3,one,1,0,0
+mystery3,three,1,0,0
+mystery3,two,1,0,0
+Mystery 4,five,4,10,7
+Mystery 4,four,1,0,0
+Mystery 4,one,3,2,6
+Mystery 4,three,1,0,0
+Mystery 4,two,1,0,0
