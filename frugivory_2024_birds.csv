@@ -1,0 +1,49 @@
+students,TreeID,Bird_sp,time_on_tree,Fruit_handled
+mystery2,one,Robin,2,4
+mystery2,one,Robin,1,2
+Mystery 4,one,other,0.5,5
+Mystery 4,one,other,0.5,1
+Mystery 4,one,Robin,1,0
+mystery1,two,Robin,1,1
+mystery2,two,Robin,1,0
+mystery2,two,Robin,0.5,0
+mystery1,three,Robin,1,0
+mystery1,three,Robin,3,0
+mystery1,three,Robin,2,0
+Anisha.Ty.Ziyang,four,other,12,0
+Anisha.Ty.Ziyang,four,Robin,2,5
+Anisha.Ty.Ziyang,five,Robin,12,0
+Anisha.Ty.Ziyang,five,Robin,2,0
+Anisha.Ty.Ziyang,five,Robin,0.5,0
+Anisha.Ty.Ziyang,five,Robin,4,4
+Anisha.Ty.Ziyang,five,Robin,1,0
+mystery1,five,other,0,2
+mystery1,five,Robin,1,0
+mystery1,five,Robin,0,0
+mystery1,five,Robin,1,0
+mystery1,five,Robin,1,1
+mystery1,five,Robin,3,0
+mystery1,five,Robin,1,0
+mystery1,five,Robin,1,1
+mystery1,five,Robin,2,0
+mystery1,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,Robin,0,0
+mystery2,five,other,0,0
+mystery3,five,Robin,2,1
+mystery3,five,Robin,1,2
+mystery3,five,Robin,1,23
+mystery3,five,Robin,0.5,3
+mystery3,five,Robin,0,0
+mystery3,five,Robin,0,0
+mystery3,five,Robin,0,0
+mystery3,five,Robin,0,0
+mystery3,five,other,0,0
+Mystery 4,five,Robin,2,0
+Mystery 4,five,Robin,5,5
+Mystery 4,five,other,1,0
+Mystery 4,five,other,2,2
